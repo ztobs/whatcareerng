@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,23 +17,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Cache;
-import com.android.volley.Network;
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.BasicNetwork;
-import com.android.volley.toolbox.DiskBasedCache;
-import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -43,20 +32,32 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import android.os.Handler;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
-    private String postRequestUrl = "http://whatcareerng.com/android/getFeaturedPost.php";
-    private ProgressDialog loading;
 
+    List<GetDataAdapter> GetDataAdapter1;
 
-    public static final String TAG = "JSON";
+    RecyclerView recyclerView;
 
-    private List<Post> posts;
-    private RecyclerView rv;
+    RecyclerView.LayoutManager recyclerViewlayoutManager;
+
+    RecyclerView.Adapter recyclerViewadapter;
+    ProgressDialog loading;
+
+    String GET_JSON_DATA_HTTP_URL = "http://whatcareerng.com/android/getFeaturedPost.php";
+    String JSON_POST_ID = "ID";
+    String JSON_POST_TITLE = "post_title";
+    String JSON_POST_CONTENT = "post_content";
+    String JSON_POST_URL = "url";
+    String JSON_POST_IMAGE = "post_image";
+    String JSON_POST_DATE = "post_date";
+
+    JsonArrayRequest jsonArrayRequest ;
+
+    RequestQueue requestQueue ;
 
 
     @Override
@@ -76,68 +77,26 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        rv=(RecyclerView)findViewById(R.id.rv);
+        GetDataAdapter1 = new ArrayList<>();
 
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        rv.setLayoutManager(llm);
-        rv.setHasFixedSize(true);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerview1);
+
+        recyclerView.setHasFixedSize(true);
+
+        recyclerViewlayoutManager = new LinearLayoutManager(this);
+
+        recyclerView.setLayoutManager(recyclerViewlayoutManager);
 
 
-        initData();
-        initializeAdapter();
+        JSON_DATA_WEB_CALL();
 
-        rv.post(new Runnable() {
-            @Override
-            public void run() {
-                getData();
-                initializeAdapter();
-            }
-        });
-
-        rv.postInvalidate();
 
 
 
 
     }
 
-    private void initializeData(JSONArray response){
-        posts = new ArrayList<>();
 
-
-        try {
-
-            for(int i=0; i<response.length(); i++)
-            {
-                JSONObject pt = response.getJSONObject(i);
-                String postTitleString = pt.getString("post_title");
-                String postContentString = pt.getString("post_content").substring(0, 80)+"...";
-                String postUrlString = pt.getString("url");
-                String postImageUrlString = pt.getString("post_image");
-                String postDateString = pt.getString("post_date");
-
-                //Toast.makeText(MainActivity.this, postImageUrlString, Toast.LENGTH_SHORT).show();
-
-                posts.add(new Post(postTitleString, postContentString, postUrlString, postImageUrlString, postDateString));
-            }
-        } catch (JSONException e) {
-            Log.i(TAG, e.toString());
-        }
-
-    }
-
-
-    private void initData()
-    {
-        posts = new ArrayList<>();
-        posts.add(new Post("", "", "", "", ""));
-    }
-
-
-    private void initializeAdapter(){
-        RVAdapter adapter = new RVAdapter(posts);
-        rv.setAdapter(adapter);
-    }
 
 
 
@@ -204,47 +163,64 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void getData()
-    {
-
-        loading = ProgressDialog.show(this, "Please Wait", "Loading Blog Posts", false, false);
-
-        JsonArrayRequest req = new JsonArrayRequest(postRequestUrl, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                initializeData(response);
-                loading.dismiss();
-            }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainActivity.this, "Check Your Network", Toast.LENGTH_SHORT).show();
-                        loading.dismiss();
-                        Log.i(TAG, error.toString());
-                    }
-                });
-        // Instantiate the cache
-        //Cache cache = new DiskBasedCache(getCacheDir(), 1024 * 1024); // 1MB cap
-
-        // Set up the network to use HttpURLConnection as the HTTP client.
-        //Network network = new BasicNetwork(new HurlStack());
-
-        // Instantiate the RequestQueue with the cache and network.
-        //RequestQueue requestQueue = new RequestQueue(cache, network);
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(req);
-    }
 
 
     @Override
     public void onClick(View v) {
-        //Toast.makeText(MainActivity.this, "Hey, im working", Toast.LENGTH_SHORT).show();
-        getData();
-        initializeAdapter();
+        int id = v.getId();
+        Toast.makeText(MainActivity.this, id+"", Toast.LENGTH_SHORT).show();
     }
 
+    public void JSON_DATA_WEB_CALL(){
 
+        jsonArrayRequest = new JsonArrayRequest(GET_JSON_DATA_HTTP_URL,
+
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+
+                        JSON_PARSE_DATA_AFTER_WEBCALL(response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+        requestQueue = Volley.newRequestQueue(this);
+
+        requestQueue.add(jsonArrayRequest);
+    }
+
+    public void JSON_PARSE_DATA_AFTER_WEBCALL(JSONArray array){
+
+
+        int ID = 0;
+        for(int i = 0; i<array.length(); i++) {
+
+            GetDataAdapter GetDataAdapter2 = new GetDataAdapter();
+
+            JSONObject json = null;
+            try {
+
+                json = array.getJSONObject(i);
+                ID = json.getInt(JSON_POST_ID);
+                GetDataAdapter2.setPostTitle(json.getString(JSON_POST_TITLE));
+                GetDataAdapter2.setPostContent(json.getString(JSON_POST_CONTENT).substring(0,50)+"...");
+                GetDataAdapter2.setPostImageUrl(json.getString(JSON_POST_IMAGE));
+
+            } catch (JSONException e) {
+
+                e.printStackTrace();
+            }
+            GetDataAdapter1.add(GetDataAdapter2);
+        }
+        recyclerViewadapter = new RecyclerViewAdapter(GetDataAdapter1, this);
+
+        recyclerView.setAdapter(recyclerViewadapter);
+    }
 
 
 }
