@@ -57,6 +57,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         );
 
         Viewholder.cv.setId(getDataAdapter1.getPostID());
+        //Viewholder.cv.set
         Viewholder.PostTitle.setText(getDataAdapter1.getPostTitle());
         Viewholder.PostContent.setText(getDataAdapter1.getPostContent());
         Viewholder.PostImage.setImageUrl(getDataAdapter1.getPostImageUrl(), imageLoader1);

@@ -6,4 +6,5 @@
 
     <color name="black_overlay">#66000000</color>
     <color name="edittext_background">#AAE0E0E0</color>
+    <color name="edittext_background_error">#AAFF4081</color>
 </resources>

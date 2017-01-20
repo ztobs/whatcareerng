@@ -6,12 +6,20 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.tobilukan.whatcareerng.ViewPost"
-    tools:showIn="@layout/activity_view_post">
+    tools:showIn="@layout/activity_view_post"
+    android:background="#dddddd"
+    android:paddingLeft="5dp"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="10dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:id="@+id/view_post_content"
+            android:textSize="15dp" />
+
 
 </android.support.v4.widget.NestedScrollView>

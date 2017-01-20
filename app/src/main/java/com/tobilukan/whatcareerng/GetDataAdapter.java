@@ -56,4 +56,6 @@ public class GetDataAdapter {
     public void setPostDate(String postDate) {
         PostDate = postDate;
     }
+
+
 }

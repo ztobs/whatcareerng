@@ -8,7 +8,7 @@
             android:title="Ask A Counselor" />
         <item
             android:id="@+id/ask_professional"
-            android:icon="@drawable/ic_local_library_black_24dp"
+            android:icon="@drawable/ic_live_help_black_24dp"
             android:title="Ask A Professional" />
         <item
             android:id="@+id/personality_test"
