@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tobilukan.whatcareerng">
+    package="com.whatcareerng.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <permission android:name="com.whatcareerng.app.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.whatcareerng.app.permission.C2D_MESSAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Splashscreen"
+            android:name="com.whatcareerng.app.Splashscreen"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,23 +26,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.whatcareerng.app.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.tobilukan.whatcareerng.MainActivity" />
+                android:value="com.whatcareerng.app.MainActivity" />
         </activity>
         <activity
-            android:name=".Ask"
+            android:name="com.whatcareerng.app.Ask"
             android:label="@string/title_activity_ask"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Contact" />
-        <activity android:name=".About" />
+        <activity android:name="com.whatcareerng.app.Contact" />
+        <activity android:name="com.whatcareerng.app.About" />
         <activity
-            android:name=".ViewPost"
+            android:name="com.whatcareerng.app.ViewPost"
             android:label="@string/title_activity_view_post"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+
 
     </application>
 

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "765604275533",
+    "firebase_url": "https://whatcareerng-34f40.firebaseio.com",
+    "project_id": "whatcareerng-34f40",
+    "storage_bucket": "whatcareerng-34f40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765604275533:android:8079abe7c5e7d4f4",
+        "android_client_info": {
+          "package_name": "com.tobilukan.whatcareerng"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765604275533-jcn7is75lpu7p73335goosut22iaah8n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2zpnh7Q4biQ1u3FWpXZSqrEbkr8JECEg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
