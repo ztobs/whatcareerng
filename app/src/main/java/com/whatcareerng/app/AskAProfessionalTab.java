@@ -35,7 +35,7 @@ public class AskAProfessionalTab extends Fragment  {
 
     View view;
     EditText name, email, phone, subject, message;
-    Spinner gender, age, referal;
+    Spinner gender, age, referal, level;
     private static final String URL = "http://whatcareerng.com/android/askQuestion.php";
     ProgressDialog loading;
 
@@ -78,6 +78,8 @@ public class AskAProfessionalTab extends Fragment  {
         gender = (Spinner) getActivity().findViewById(R.id.gender_p);
         age = (Spinner) getActivity().findViewById(R.id.age_p);
         referal = (Spinner) getActivity().findViewById(R.id.referal_p);
+
+        level = (Spinner) getActivity().findViewById(R.id.level_p);
 
         loading = new ProgressDialog(getContext());
         loading.setMessage("submitting");
@@ -127,6 +129,13 @@ public class AskAProfessionalTab extends Fragment  {
             age.getBackground().setColorFilter(getResources().getColor(R.color.edittext_background_error), PorterDuff.Mode.SRC_ATOP);
             err = true;
         }
+        if(level.getSelectedItem().equals("Choose Current Education Level"))
+        {
+            TextView errorText = (TextView)level.getSelectedView();
+            errorText.setError("Please select", getResources().getDrawable(R.drawable.ic_error_black_24dp));
+            level.getBackground().setColorFilter(getResources().getColor(R.color.edittext_background_error), PorterDuff.Mode.SRC_ATOP);
+            err = true;
+        }
         if(gender.getSelectedItem().equals("Gender"))
         {
             TextView errorText = (TextView)gender.getSelectedView();
@@ -153,7 +162,7 @@ public class AskAProfessionalTab extends Fragment  {
             RequestQueue requestQueue = Volley.newRequestQueue(getContext());
 
             try {
-                String url2go = URL+"?name="+URLEncoder.encode(name.getText().toString().trim(), "UTF-8")+"&email="+URLEncoder.encode(email.getText().toString().trim(), "UTF-8")+"&phone="+URLEncoder.encode(phone.getText().toString().trim(), "UTF-8")+"&gender="+URLEncoder.encode(gender.getSelectedItem().toString(), "UTF-8")+"&age="+URLEncoder.encode(age.getSelectedItem().toString(), "UTF-8")+"&subject="+URLEncoder.encode(subject.getText().toString().trim(), "UTF-8")+"&message="+URLEncoder.encode(message.getText().toString().trim(), "UTF-8")+"&referal="+URLEncoder.encode(referal.getSelectedItem().toString().trim(), "UTF-8")+"&type=ask-a-pro";
+                String url2go = URL+"?name="+URLEncoder.encode(name.getText().toString().trim(), "UTF-8")+"&email="+URLEncoder.encode(email.getText().toString().trim(), "UTF-8")+"&phone="+URLEncoder.encode(phone.getText().toString().trim(), "UTF-8")+"&gender="+URLEncoder.encode(gender.getSelectedItem().toString(), "UTF-8")+"&age="+URLEncoder.encode(age.getSelectedItem().toString(), "UTF-8")+"&subject="+URLEncoder.encode(subject.getText().toString().trim(), "UTF-8")+"&message="+URLEncoder.encode(message.getText().toString().trim(), "UTF-8")+"&referal="+URLEncoder.encode(referal.getSelectedItem().toString().trim(), "UTF-8")+"&type=ask-a-pro"+"&level="+URLEncoder.encode(level.getSelectedItem().toString().trim(), "UTF-8");
 
                 StringRequest stringRequest = new StringRequest(url2go, new Response.Listener<String>() {
                     @Override
@@ -206,6 +215,7 @@ public class AskAProfessionalTab extends Fragment  {
         referal.setSelection(0);
         subject.setText("");
         message.setText("");
+        level.setSelection(0);
     }
 
     public void clearError()
@@ -218,6 +228,7 @@ public class AskAProfessionalTab extends Fragment  {
         referal.getBackground().setColorFilter(getResources().getColor(R.color.edittext_background), PorterDuff.Mode.SRC_ATOP);
         subject.getBackground().setColorFilter(getResources().getColor(R.color.edittext_background), PorterDuff.Mode.SRC_ATOP);
         message.getBackground().setColorFilter(getResources().getColor(R.color.edittext_background), PorterDuff.Mode.SRC_ATOP);
+        level.getBackground().setColorFilter(getResources().getColor(R.color.edittext_background), PorterDuff.Mode.SRC_ATOP);
 
     }
 

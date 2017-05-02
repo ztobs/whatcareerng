@@ -50,5 +50,13 @@
     <string name="rate_dialog_cancel">Remind Me Later</string>
     <string name="rate_dialog_no">No, Thanks</string>
 
+    <string-array name="levels_range">
+        <item>Choose Current Education Level</item>
+        <item>Junior Secondary School</item>
+        <item>Senior Secondary School</item>
+        <item>Undergraduate</item>
+        <item>Graduate</item>
+    </string-array>
+
 
 </resources>
