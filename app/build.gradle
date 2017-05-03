@@ -3,10 +3,16 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         config {
-            keyAlias 'Whatcareerng _key'
-            keyPassword 'tlukan01'
-            storeFile file('C:/android_dev_tools/Android Keystore/myAndroidKeystore.jks')
-            storePassword '123iseasy'
+            keyAlias 'Whatcareer'
+            keyPassword 'Password_123'
+            storeFile file('C:/Users/User/AndroidStudioProjects/keystore/whatcareer.jks')
+            storePassword 'T_lukan01'
+        }
+        config1 {
+            keyAlias 'Whatcareer'
+            keyPassword 'Password_123'
+            storeFile file('C:/Users/User/AndroidStudioProjects/keystore/whatcareer.jks')
+            storePassword 'T_lukan01'
         }
     }
     compileSdkVersion 24
