@@ -1,27 +1,35 @@
 {
   "project_info": {
-    "project_number": "765604275533",
-    "firebase_url": "https://whatcareerng-34f40.firebaseio.com",
-    "project_id": "whatcareerng-34f40",
-    "storage_bucket": "whatcareerng-34f40.appspot.com"
+    "project_number": "672051505907",
+    "firebase_url": "https://whatcareer-7cf17.firebaseio.com",
+    "project_id": "whatcareer-7cf17",
+    "storage_bucket": "whatcareer-7cf17.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:765604275533:android:8079abe7c5e7d4f4",
+        "mobilesdk_app_id": "1:672051505907:android:0f2e1d23d187060c",
         "android_client_info": {
-          "package_name": "com.tobilukan.whatcareerng"
+          "package_name": "com.whatcareer.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "765604275533-jcn7is75lpu7p73335goosut22iaah8n.apps.googleusercontent.com",
+          "client_id": "672051505907-ikhoi1boi4e5dnsusimfb221b0db8dqe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.whatcareer.app",
+            "certificate_hash": "7ecef4c62621875846628d541f87c46d9e498b29"
+          }
+        },
+        {
+          "client_id": "672051505907-p3ufd69emjr3ek7obi57n40uc8j1ldva.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC2zpnh7Q4biQ1u3FWpXZSqrEbkr8JECEg"
+          "current_key": "AIzaSyDGsoQa3hhY797QJRBsm3BuiAQ4MmVdZ30"
         }
       ],
       "services": {
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672051505907-p3ufd69emjr3ek7obi57n40uc8j1ldva.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

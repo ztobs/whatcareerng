@@ -1,11 +1,10 @@
 <resources>
-    <string name="app_name">Whatcareerng</string>
+    <string name="app_name">Whatcareer</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
     <string name="navlogo">NavLogo</string>
 
     <string name="splash_screen_text">... help is closer than you think</string>

@@ -92,6 +92,79 @@
                 <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:id="@+id/level_c"
+                    android:spinnerMode="dropdown"
+                    android:background="@color/edittext_background"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="10dp"
+                    android:entries="@array/levels_range"
+                    android:padding="10dp"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/ambition_c"
+                    android:hint="Desired Career"
+                    android:background="@color/edittext_background"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/course_c"
+                    android:hint="Class/Course of Specialization"
+                    android:background="@color/edittext_background"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/m_occupation_c"
+                    android:hint="Mother's Occupation"
+                    android:background="@color/edittext_background"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/f_occupation_c"
+                    android:hint="Fathers's Occupation"
+                    android:background="@color/edittext_background"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/personality_c"
+                    android:hint="Personality Type Result"
+                    android:background="@color/edittext_background"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"/>
+
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
                     android:id="@+id/referal_c"
                     android:layout_gravity="start"
                     android:spinnerMode="dropdown"

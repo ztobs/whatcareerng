@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.whatcareerng.app">
+    package="com.whatcareer.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
-    <permission android:name="com.whatcareerng.app.permission.C2D_MESSAGE"
+    <permission android:name="com.whatcareer.app.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
-    <uses-permission android:name="com.whatcareerng.app.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.whatcareer.app.permission.C2D_MESSAGE" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.whatcareerng.app.Splashscreen"
+            android:name="com.whatcareer.app.Splashscreen"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,25 +26,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.whatcareerng.app.MainActivity"
+            android:name="com.whatcareer.app.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.whatcareerng.app.MainActivity" />
+                android:value="com.whatcareer.app.MainActivity" />
         </activity>
         <activity
-            android:name="com.whatcareerng.app.Ask"
+            android:name="com.whatcareer.app.Ask"
             android:label="@string/title_activity_ask"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.whatcareerng.app.Contact" />
-        <activity android:name="com.whatcareerng.app.About" />
+        <activity android:name="com.whatcareer.app.Contact" />
+        <activity android:name="com.whatcareer.app.About" />
         <activity
-            android:name="com.whatcareerng.app.ViewPost"
+            android:name="com.whatcareer.app.ViewPost"
             android:label="@string/title_activity_view_post"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
+        {% includecode github_path="firebase/quickstart-android/messaging/app/src/main/AndroidManifest.xml"
+        region_tag="firebase_service" adjust_indentation="auto" github_link=True %}
 
+        {% includecode github_path="firebase/quickstart-android/messaging/app/src/main/AndroidManifest.xml"
+        region_tag="fcm_default_icon" adjust_indentation="auto" github_link=True %}
 
     </application>
 
