@@ -126,7 +126,9 @@ public class ViewPost extends AppCompatActivity {
 
                     tvPostTitle.setText(response.getString("post_title"));
                     //actionBar.setTitle(response.getString("post_title"));
-                    tvPostContent.setText(Html.fromHtml(response.getString("post_content")));
+                    String PC = response.getString("post_content");
+                    String PC2 = PC.replace("\r\n", "<br>");
+                    tvPostContent.setText(Html.fromHtml(PC2));
                     customPostUrl = response.getString("url");
 
                     fab.setOnClickListener(new View.OnClickListener() {
