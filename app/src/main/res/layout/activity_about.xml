@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Whatcareer 1.0.1"
+                android:text="Whatcareer 1.2.0"
                 android:id="@+id/textView2"
                 android:layout_alignBottom="@+id/imageView"
                 android:layout_toRightOf="@+id/imageView"

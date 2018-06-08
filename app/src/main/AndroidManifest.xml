@@ -6,8 +6,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
-    <permission android:name="com.whatcareer.app.permission.C2D_MESSAGE"
+    <permission
+        android:name="com.whatcareer.app.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="com.whatcareer.app.permission.C2D_MESSAGE" />
 
     <application
@@ -17,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.whatcareer.app.Splashscreen"
+            android:name=".Splashscreen"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,30 +28,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.whatcareer.app.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.whatcareer.app.MainActivity" />
         </activity>
+        <activity android:name=".Contact" />
+        <activity android:name=".About" />
         <activity
-            android:name="com.whatcareer.app.Ask"
-            android:label="@string/title_activity_ask"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.whatcareer.app.Contact" />
-        <activity android:name="com.whatcareer.app.About" />
-        <activity
-            android:name="com.whatcareer.app.ViewPost"
+            android:name=".ViewPost"
             android:label="@string/title_activity_view_post"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        {% includecode github_path="firebase/quickstart-android/messaging/app/src/main/AndroidManifest.xml"
+        {% includecode
+        github_path="firebase/quickstart-android/messaging/app/src/main/AndroidManifest.xml"
         region_tag="firebase_service" adjust_indentation="auto" github_link=True %}
 
-        {% includecode github_path="firebase/quickstart-android/messaging/app/src/main/AndroidManifest.xml"
+        {% includecode
+        github_path="firebase/quickstart-android/messaging/app/src/main/AndroidManifest.xml"
         region_tag="fcm_default_icon" adjust_indentation="auto" github_link=True %}
-
+        <activity android:name=".AskCounselor2" />
+        <activity android:name=".PersonalityTest" />
+        <activity android:name=".AskCounselorWeb" />
+        <activity android:name=".FeaturedInterns" />
+        <activity android:name=".JobOpportunities"></activity>
     </application>
 
 </manifest>

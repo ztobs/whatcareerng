@@ -5,15 +5,19 @@
         <item
             android:id="@+id/ask_counselor"
             android:icon="@drawable/ic_live_help_black_24dp"
-            android:title="Ask A Counselor" />
+            android:title="Talk To A Counselor" />
+        <!--<item-->
+            <!--android:id="@+id/personality_test"-->
+            <!--android:icon="@drawable/ic_mode_edit_black_24dp"-->
+            <!--android:title="Take A Test" />-->
         <item
-            android:id="@+id/ask_professional"
-            android:icon="@drawable/ic_live_help_black_24dp"
-            android:title="Ask A Professional" />
+            android:id="@+id/featured_interns"
+            android:icon="@drawable/ic_local_library_black_24dp"
+            android:title="Featured Interns" />
         <item
-            android:id="@+id/personality_test"
-            android:icon="@drawable/ic_mode_edit_black_24dp"
-            android:title="Take A Test" />
+            android:id="@+id/job_opportunities"
+            android:icon="@drawable/ic_local_library_black_24dp"
+            android:title="Internship Opportunities" />
         <item
             android:id="@+id/contact"
             android:icon="@drawable/ic_contacts_black_24dp"

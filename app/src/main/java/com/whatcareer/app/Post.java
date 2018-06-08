@@ -2,6 +2,7 @@ package com.whatcareer.app;
 
 
 public class Post {
+
     String postTitle;
     String postContent;
     String postUrl;

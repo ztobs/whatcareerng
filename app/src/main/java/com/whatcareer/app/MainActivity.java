@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.ask_a) {
-            Intent intent = new Intent(this, Ask.class);
+            Intent intent = new Intent(this, AskCounselorWeb.class);
             startActivity(intent);
         }
 
@@ -207,18 +207,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.ask_counselor) {
-            Intent intent = new Intent(this, Ask.class);
-            intent.putExtra("EXTRA_PAGE", 0+"");
+            Intent intent = new Intent(this, AskCounselorWeb.class);
             startActivity(intent);
-        } else if (id == R.id.ask_professional) {
-            Intent intent = new Intent(this, Ask.class);
-            intent.putExtra("EXTRA_PAGE", 1+"");
+//        } else if (id == R.id.personality_test) {
+//            Intent intent = new Intent(this, PersonalityTest.class);
+//            startActivity(intent);
+        } else if (id == R.id.featured_interns) {
+            Intent intent = new Intent(this, FeaturedInterns.class);
             startActivity(intent);
-        } else if (id == R.id.personality_test) {
-            String url = "http://www.mba-institute.org/personality-test/Myers-Briggs-MBTI-Personality-Test-Start.php";
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(url));
-            startActivity(i);
+        } else if (id == R.id.job_opportunities) {
+            Intent intent = new Intent(this, JobOpportunities.class);
+            startActivity(intent);
         } else if (id == R.id.contact) {
             Intent contact = new Intent(this, Contact.class);
             startActivity(contact);

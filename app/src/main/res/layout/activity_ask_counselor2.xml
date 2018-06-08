@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.whatcareer.app.AskCounselor2"
+    android:background="@drawable/bg1"
+    android:id="@+id/layout_c">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="50dp" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewHolder"
+                android:layout_marginTop="20dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/name_c"
+                    android:hint="Name"
+                    android:textColor="#000"
+                    android:background="@color/edittext_background"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:ems="10"
+                    android:id="@+id/email_c"
+                    android:hint="Email"
+                    android:textColor="#000"
+                    android:padding="10dp"
+                    android:background="@color/edittext_background"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:ems="10"
+                    android:id="@+id/phone_c"
+                    android:hint="Phone"
+                    android:background="@color/edittext_background"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/gender_c"
+                    android:spinnerMode="dropdown"
+                    android:entries="@array/gender"
+                    android:background="@color/edittext_background"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/age_c"
+                    android:layout_gravity="start"
+                    android:spinnerMode="dropdown"
+                    android:textAlignment="viewStart"
+                    android:entries="@array/age_range"
+                    android:background="@color/edittext_background"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/level_c"
+                    android:spinnerMode="dropdown"
+                    android:background="@color/edittext_background"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="10dp"
+                    android:entries="@array/levels_range"
+                    android:padding="10dp"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/ambition_c"
+                    android:hint="What do you want to/did you study?"
+                    android:background="@color/edittext_background"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/curious_c"
+                    android:hint="What are you curious about?"
+                    android:background="@color/edittext_background"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"/>
+
+                <EditText
+                    android:id="@+id/good_at_c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/edittext_background"
+                    android:ems="10"
+                    android:hint="What are you good at?"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textColor="#000" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/personality_c"
+                    android:hint="Personality Type Result"
+                    android:background="@color/edittext_background"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"/>
+
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/referal_c"
+                    android:layout_gravity="start"
+                    android:spinnerMode="dropdown"
+                    android:textAlignment="viewStart"
+                    android:entries="@array/referal_range"
+                    android:background="@color/edittext_background"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"/>
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:ems="10"
+                    android:id="@+id/message_c"
+                    android:hint="Message"
+                    android:minHeight="100dp"
+                    android:background="@color/edittext_background"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:maxLines="7" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="SUBMIT"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:background="@drawable/btn_shape"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/submit_btn_c"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
